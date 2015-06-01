@@ -1,6 +1,38 @@
 /* jshint node: true */
 'use strict';
 
+var logged = false;
+
 module.exports = {
-  name: 'ember-intercom'
+  name: 'ember-intercom',
+
+  contentFor: function(type, config) {
+    if ((config.intercom != null ? config.intercom.appId : void 0) != null) {
+      if (type === 'body-footer') {
+        var content = [
+          "<script type=\"text/javascript\">",
+          "(function(){var w=window;var ic=w.Intercom;",
+          "if(typeof ic===\"function\"){ic('reattach_activator');",
+          "ic('update',intercomSettings);}else{var d=document;",
+          "var i=function(){i.c(arguments)};i.q=[];",
+          "i.c=function(args){i.q.push(args)};w.Intercom=i;",
+          "function l(){var s=d.createElement('script');",
+          "s.type='text/javascript';s.async=true;",
+          "s.src='https://widget.intercom.io/widget/" + config.intercom.appId + "'",
+          "var x=d.getElementsByTagName('script')[0];",
+          "x.parentNode.insertBefore(s,x);}",
+          "if(w.attachEvent){w.attachEvent('onload',l);}",
+          "else{w.addEventListener('load',l,false);}}})()",
+          "</script>"
+        ];
+
+        return content.join("\n");
+      }
+    } else {
+      if(!logged) {
+        console.log('Intercom: no appId supplied - intercom disabled. Enable by supplying an appId in your configuration: ENV.intercom = {appId: "YourAppId"} in config/environment.js');
+        logged = true;
+      }
+    }
+  }
 };

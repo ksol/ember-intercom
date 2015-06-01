@@ -1,7 +1,7 @@
 {
   "name": "ember-intercom",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Ember CLI addon that adds the intercom js code.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,18 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ksol/ember-intercom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksol/ember-intercom/issues"
+  },
+  "homepage": "https://github.com/ksol/ember-intercom",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Kevin Soltysiak <kevin@ksol.fr>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
@@ -35,7 +42,9 @@
     "ember-try": "0.0.4"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-cli",
+    "intercom"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0"

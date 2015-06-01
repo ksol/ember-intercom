@@ -1,25 +1,27 @@
-# Ember-intercom
+# Ember Intercom
 
-This README outlines the details of collaborating on this Ember addon.
+This Ember CLI addon injects Intercom's widget javascript code in your page.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `ember install ember-intercom`
 
-## Running
+## Configuration
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+In `config/environment.js`, you need to add this :
 
-## Running Tests
+```javascript
+  var ENV = {
+    // ...
+    intercom: {
+      appId: "your app id here"
+    },
+    // ...
+  }
+```
 
-* `ember test`
-* `ember test --server`
+If `ENV.intercom.appId` is missing, the javascript code will not be injected.
 
-## Building
-
-* `ember build`
+## Ember CLI
 
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).

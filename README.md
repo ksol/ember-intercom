@@ -1,5 +1,9 @@
 # Ember Intercom
 
+### :warning: Clearly not maintained, please don't use.
+
+---
+
 This Ember CLI addon injects Intercom's widget javascript code in your page.
 
 ## Installation
